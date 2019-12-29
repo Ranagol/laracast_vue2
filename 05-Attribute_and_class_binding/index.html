@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    .is-loading { background: red;}
+  </style>
+
+</head>
+<body>
+  <div id="root">
+    <button :title='title'>Hover over me</button>
+    <!--this here is just a simple attribute binding-->
+
+
+    <button :class="{'is-loading': isLoading} " @click="toggleClass">Toggle me</button>
+    <!--this here is a class binding. What we say here: bind the class attribut to .is-loading class from CSS, if some expression is true. By default this is false, bt we have a toggleClass() that can change this to true. toggleClass() will be activated by the 'Toggle me' button. Then, isLoading property will become true, and is-loading CSS class will be activated. And, our button will have red background on this click-->
+
+    <button :disabled='happy'>Homework</button>
+    <!--Our Homework button is disabled, if the happy property is true. If we change happy to false with toggleClass(), then this button will be clickable-->
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    var app = new Vue({
+      el: '#root',
+      data: {
+        title: 'Now the title is being set through JavaScript.',
+        isLoading: false,//by default this is false, bt we have a toggleClass() that can change this to true
+        happy: true,
+      },
+
+      methods: {
+        toggleClass(){
+          this.isLoading = true;
+          this.happy = false;
+        },
+
+      }
+    })
+  </script>
+  
+</body>
+</html>
