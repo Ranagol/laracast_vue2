@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root"><!--this is our container Vue, that is binded to the Vue instance below-->
+        <ul>
+            <li v-for='name in names' v-text='name'></li><!--how to use the v-for directive to filter through a list of items and render them on the page.-->
+        </ul>
+
+        <input id="input" type="text"><!-- Here we have a text input. Every name typed into this input will be added to our names array, and after that the input field will be emptied-->
+        <button id="button">Add name</button>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!--we want to create an way for the user to be able to add another name to the names array-->
+
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                names: ['Joe', 'Mary', 'Jane', 'Jack']
+            },
+
+            mounted(){
+                document.querySelector('#button').addEventListener('click', ()=>{
+                    let name = document.querySelector('#input')//grab the value of the button, and push it to our array with names above
+                    app.names.push(name.value);
+                    name.value = '';//with this, our app ads the new name, and after that clears the input window from the new name
+                });
+            }
+        });
+
+    </script>
+
+</body>
+</html>

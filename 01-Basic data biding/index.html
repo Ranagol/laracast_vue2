@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root">
+            <input type="text" id="input" v-model="message"><!--so now within here we can use Vue and data binding, but not outside of this div. v-model is a so called Vue directive. All Vue directives start with v-. v-model is desinged for forms and inputs. We bind this with our 'message' property.
+            -->
+            <p>The value of the input is: {{ message }}.</p><!--here we are echoing out our message, with the same trick as with the Laravel-->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        new Vue({//here we are creating a new Vue instance
+            el: '#root',//here we are telling Vue: the area where we want you to exist is is an element with the id of #root (that is the div on the top). We are binding this Vue instance to this element.
+            data: {//the data (model) will be the data from above
+                message: 'Hello World'
+            }//we want to bind this value, this property with the input part on the top. This will be an automatic data binding. If either one of them changes the other will change too.We want them to work behind the scene.
+        })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root"><!--this is our container, that is binded to the Vue instance below-->
+        <ul>
+            <li v-for='name in names' v-text='name'></li><!--how to use the v-for directive to filter through a list of items and render them on the page.-->
+        </ul>
+
+        <input id="input" type="text" v-model='newName'>
+        <button @click='addName'>Add name</button><!--this is how we can register event listeners with Vue. addName will be our custom method, that will be executed on click.-->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!--we want to create an way for the user to be able to add another name to the names array-->
+
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                newName: '',//the new name from the input will arrive here
+                names: ['Joe', 'Mary', 'Jane', 'Jack']
+            },
+
+            methods: {
+                addName(){
+                    this.names.push(this.newName);//the new name will be added to the array...
+                    this.newName = '';//...and after that we want the input field to be emptied
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
