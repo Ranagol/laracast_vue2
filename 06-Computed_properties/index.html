@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="root">
+
+  <h1 v-text='reversedMessage'></h1><!--An example how to use v-text. The result will be: dlrow olleH-->
+
+  <h2>All Tasks</h2>
+  <ul>
+    <li v-for="task in tasks" v-text="task.description"></li>
+    <!--with v-for we are looping. With v-text we are echoing.-->
+  </ul>
+
+  <h2>Incompleted Tasks</h2>
+  <ul>
+    <!--Here, we want to see our incomplete tasks. For this, we have to filter our tasks. This filtering is happening in the computed properties, with the incompleteTasks()-->
+    <li v-for="task in incompleteTasks" v-text="task.description"></li>
+  </ul>
+
+  <h2>Completed Tasks</h2>
+  <ul>
+    <!--Here, we want to see our incomplete tasks. For this, we have to filter our tasks. This filtering is happening in the computed properties, with the completeTasks()-->
+    <li v-for="task in completeTasks" v-text="task.description"></li>
+  </ul>
+  
+</div>
+  
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+<script>
+  var app =  new Vue({
+    el: '#root',
+    data: { 
+
+      tasks: [
+      { description: 'Go to the store', completed: true },
+      { description: 'Finish screencast', completed: false },
+      { description: 'Make donation', completed: false },
+      { description: 'Clear inbox', completed: false },
+      { description: 'Make dinner', completed: false },
+      { description: 'Clean room', completed: true }],
+
+      message: 'Hello world',
+    },
+
+    computed: {
+      incompleteTasks() {
+        return this.tasks.filter(task => ! task.completed);//this will return an array of incomplete tasks. So, we can use for looping.
+      },
+
+      completeTasks(){
+        return this.tasks.filter(task => task.completed);
+      },
+
+      reversedMessage(){
+        return this.message.split('').reverse().join('')//an example how to chain 3 built in JS commands. We want to return a reversed message with this function.
+      },
+    }
+  });
+</script>
+  
+</body>
+</html>
