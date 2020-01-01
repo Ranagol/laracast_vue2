@@ -1,0 +1,19 @@
+button {
+  display: block;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.royal {
+  color: red;
+}
+
+.cardinal {
+  color: purple;
+}
+
+.is-loading {
+  background-color: red;
+}

@@ -1,0 +1,23 @@
+body {
+  padding-top: 40px;
+}
+
+nav li {
+  display: inline;
+}
+
+nav h1 span {
+  margin-right: 0.3em;
+}
+
+button {
+  display: block;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.message button {
+  float: right;
+}

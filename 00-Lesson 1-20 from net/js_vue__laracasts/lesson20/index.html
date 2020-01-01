@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/bulma-0.5.0.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="section">
+    <nav>
+      <h1><span class="index">20</span>Object-oriented forms: part 2</h1>
+      <ul>
+        <li><a href="../lesson19">Prev</a></li>
+        <li><a href="../lesson21">Next</a></li>
+      </ul>
+    </nav>
+
+    <div id="root" class="container">
+      <list :projects="projects">
+        <template></template>
+      </list>
+
+      <form method="post" action="projects" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
+        <div class="control">
+          <label for="name" class="label">Project name:</label>
+          <input type="text" id="name" name="name" class="input" v-model="form.name"/>
+        </div>
+        <div class="control">
+          <label for="description" class="label">Project description:</label>
+          <input type="text" id="description" name="description" class="input" v-model="form.description" />
+        </div>
+        <div class="control">
+          <button class="button is-primary" :disabled="form.errors.any()">Create</button>
+        </div>
+        <span class="help is-danger" v-if="form.errors.has('name')" v-text="form.errors.get('name')"></span>
+      </form>
+    </div>
+
+    <script type="text/x-template" id="list">
+      <table class="table">
+        <caption>List of projects</caption>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- props are directly available by name -->
+          <tr v-for="project in projects">
+            <td>{{ project.name }}</td>
+            <td>{{ project.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </script>
+
+    <script src="../lib/axios-0.16.2.min.js"></script>
+    <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script -->
+    <script src="../lib/vue-2.1.6.js"></script>
+    <script src="code.js"></script>
+  </body>
+</html>

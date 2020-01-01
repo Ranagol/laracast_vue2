@@ -8,13 +8,16 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body>
+
 <!--We are using Bulma here instead of Boostrap-->
 <div id="root" class="container">
+
   <modal v-if="showModal" @close="showModal=false">
     <p>Insert any text here.</p>
   </modal>
 
   <button @click="showModal = true" >Show modal</button>
+  
 </div>
  
 

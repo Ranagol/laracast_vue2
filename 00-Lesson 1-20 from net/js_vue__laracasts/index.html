@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+  xmlns:v-on="http://www.w3.org/1999/xhtml"
+  xmlns:v-bind="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="root">
+      <h1>Vue 2 step by step</h1>
+      <p>From <a href="https://laracasts.com/series/learn-vue-2-step-by-step">Laracasts</a></p>
+
+      <ul>
+        <li v-for="lesson in lessons"><a v-bind:href="'lesson' + lesson">Lesson {{ lesson }}</a></li>
+      </ul>
+    </div>
+
+    <script src="lib/vue-2.1.3.js"></script>
+    <script src="code.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/bulma-0.2.3.css" />
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css" -->
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <h1><span class="index">10</span>Exercise 2: Bulma modal</h1>
+      <ul>
+        <li><a href="../lesson09">Prev</a></li>
+        <li><a href="../lesson11">Next</a></li>
+      </ul>
+    </nav>
+
+    <div id="root" class="container">
+      <modal v-show="showModal" @close="showModal = false">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        </p>
+      </modal>
+      <button type="button" @click="showModal = true">Show modal</button>
+    </div>
+
+    <script src="../lib/vue-2.1.3.js"></script>
+    <script src="code.js"></script>
+  </body>
+</html>

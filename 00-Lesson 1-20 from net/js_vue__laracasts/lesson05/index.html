@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <h1><span class="index">5</span>Attribute and class binding</h1>
+      <ul>
+        <li><a href="../lesson04">Prev</a></li>
+        <li><a href="../lesson06">Next</a></li>
+      </ul>
+    </nav>
+
+    <div id="root">
+      <h1 :class="className">Heading 1</h1>
+      <button v-on:click="onClick" v-bind:title="title">Hover over me</button>
+      <button @click="onClick" :title="title">Over me too</button>
+      <button @click="toggleClass" :class="{ 'is-loading': isLoading }">Toggle me</button>
+      <button @click="setDisabled" :disabled="isDisabled">Try to click me</button>
+    </div>
+
+    <script src="../lib/vue-2.1.3.js"></script>
+    <script src="code.js"></script>
+  </body>
+</html>

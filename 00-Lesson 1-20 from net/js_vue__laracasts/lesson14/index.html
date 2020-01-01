@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/bulma-0.2.3.css" />
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css"  -->
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <h1><span class="index">14</span>Named slots in a nutshell</h1>
+      <ul>
+        <li><a href="../lesson13">Prev</a></li>
+        <li><a href="../lesson15">Next</a></li>
+      </ul>
+    </nav>
+
+    <div id="root" class="container">
+      <modal>
+        <template slot="header">Modal title</template>
+        <!-- Default slot can use a default value. Comments don't count. -->
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        <!-- To use default content on a non-default slot, just don't emit it -->
+        <template slot="footer">
+          <a class="button is-primary">Save changes</a>
+          <a class="button">Cancel</a>
+        </template>
+      </modal>
+    </div>
+
+    <script src="../lib/vue-2.1.3.js"></script>
+    <script src="code.js"></script>
+  </body>
+</html>

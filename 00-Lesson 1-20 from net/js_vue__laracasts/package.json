@@ -1,0 +1,12 @@
+{
+  "name": "laracasts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Frederic G. MARAND <fgm@osinet.fr>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1"
+  }
+}

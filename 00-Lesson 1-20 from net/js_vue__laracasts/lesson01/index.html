@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <nav>
+      <h1><span class="index">1</span>Basic data binding</h1>
+      <ul>
+        <li><a href="../lesson02">Next</a></li>
+      </ul>
+    </nav>
+
+    <div id="root">
+      <input type="text" id="input" v-model="message" />
+      <p v-cloak>The value of the input is: {{ message }}.</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+    <script>
+
+
+      const app = new Vue({
+        el: '#root',
+        data: {
+          message: "Hello world",
+        }
+      });
+
+    </script>
+  </body>
+</html>

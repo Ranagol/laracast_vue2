@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/bulma-0.5.0.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="section">
+    <nav>
+      <h1><span class="index">18</span>Vue Ajax requests with Axios</h1>
+      <ul>
+        <li><a href="../lesson17">Prev</a></li>
+        <li><a href="../lesson19">Next</a></li>
+      </ul>
+    </nav>
+
+    <div id="root" class="container">
+      <ul>
+        <li v-for="skill in skills" v-text="skill"></li>
+        <!-- li v-for="skill in skills">{{ skill }}</li -->
+      </ul>
+    </div>
+
+    <script src="../lib/axios-0.16.2.min.js"></script>
+    <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script -->
+    <script src="../lib/vue-2.1.6.js"></script>
+    <script src="code.js"></script>
+  </body>
+</html>

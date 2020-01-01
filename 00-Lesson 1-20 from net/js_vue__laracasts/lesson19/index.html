@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/bulma-0.5.0.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="section">
+    <nav>
+      <h1><span class="index">19</span>Object-oriented forms: part 1</h1>
+      <ul>
+        <li><a href="../lesson18">Prev</a></li>
+        <li><a href="../lesson20">Next</a></li>
+      </ul>
+    </nav>
+
+    <div id="root" class="container">
+      <list :projects="projects">
+        <template></template>
+      </list>
+
+      <form method="post" action="projects" @submit.prevent="onSubmit" @keydown="errors.clear($event.target.name)">
+        <div class="control">
+          <label for="name" class="label">Project name:</label>
+          <input type="text" id="name" name="name" class="input" v-model="name"/>
+        </div>
+        <div class="control">
+          <label for="description" class="label">Project description:</label>
+          <input type="text" id="description" name="description" class="input" v-model="description" />
+        </div>
+        <div class="control">
+          <button class="button is-primary" :disabled="errors.any()">Create</button>
+        </div>
+        <span class="help is-danger" v-if="errors.has('name')" v-text="errors.get('name')"></span>
+      </form>
+    </div>
+
+    <script src="../lib/axios-0.16.2.min.js"></script>
+    <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script -->
+    <script src="../lib/vue-2.1.6.js"></script>
+    <script src="code.js"></script>
+  </body>
+</html>

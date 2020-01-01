@@ -1,0 +1,21 @@
+{
+  "authors": [
+    {
+      "name": "Frederic G. MARAND",
+      "email": "fgm@osinet.fr"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Lesson19\\": "src/"
+    }
+  },
+  "description": "Lesson 19 of the Laracasts Vue 2 tutorial",
+  "license": "GPL-3.0+",
+  "minimum-stability": "dev",
+  "name": "laracasts_vue2/lesson19",
+  "require": {
+    "silex/silex": "^2.2"
+  },
+  "type": "project"
+}
