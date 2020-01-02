@@ -5,11 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vue2 learning</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body>
 
 
 <div id="root" class="container">
+
+  <!--this here is an inline template-->
+  <progress-view inline-template>
+    <div>
+      <h1>Your progress through this course is {{ completionRate }}%</h1><!--we want this here, inline. We don't want to store this in JS-->
+
+      <p><button @click="completionRate += 10">Update completionRate</button></p>
+    </div>
+  </progress-view>
   
 </div>
 
